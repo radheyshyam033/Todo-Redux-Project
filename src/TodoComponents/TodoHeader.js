@@ -6,6 +6,7 @@ export default function TodoHeader(){
        <header className="Todo-header">
       <h1>Todo App</h1><br />
       
+      <Link to='/'></Link>
       <Link to='/inputdata'><button>Add Task</button></Link>
       <Link to='/showdata'><button>Home</button></Link>
 

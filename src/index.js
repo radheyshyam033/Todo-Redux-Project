@@ -5,15 +5,15 @@ import App from './TodoComponents/App';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import { fetchApi } from './redux/action';
+import TodoTask from './TodoComponents/TodoTask';
 
-store.dispatch(fetchApi())
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+{store.dispatch(fetchApi())}
 root.render(
-   
       <Provider store={store}>
          <App />
       </Provider>
-   // </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

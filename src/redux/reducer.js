@@ -11,7 +11,7 @@ const reducer = (state = [], action) => {
           login: action.login,
         },
       ];
-    case "insert":
+    case "INSERT":
       return [
         ...state,
         {
@@ -19,7 +19,7 @@ const reducer = (state = [], action) => {
           login: action.login,
         },
       ];
-    case "update":
+    case "UPDATE":
       return [
         ...state.map((ele) => {
           if (ele.id === action.id) {
@@ -28,8 +28,9 @@ const reducer = (state = [], action) => {
           return ele
         }),
       ];
-    case "delete":
-      return state=[...state.filter((ele) => ele.id !== action.id)];
+    case "DELETE":
+      // console.log(state)
+      return [...state.filter((ele) => ele.id !== action.id)];
 
     default:
       return state;

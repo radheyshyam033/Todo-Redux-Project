@@ -1,20 +1,20 @@
 export const insertData=(data)=> {
   return {
-    type: "insert",
+    type: "INSERT",
     id: data.id,
     login: data.login,
   };
 }
 export const updateData=(newValue, element)=> {
   return {
-    type: "update",
+    type: "UPDATE",
     id: element.id,
     newValue: newValue,
   };
 }
 export const deleteData=(data)=> {
   return {
-    type: "delete",
+    type: "DELETE",
     id: data.id,
   };
 }

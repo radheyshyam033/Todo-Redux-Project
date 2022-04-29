@@ -3,8 +3,8 @@ import { deleteData, updateData } from "../redux/action";
 import store from "../redux/store";
 import TodoHeader from "./TodoHeader";
 
-function TodoTask() {
-  // console.log(store.getState())
+const TodoTask=()=> {
+  console.log(store.getState())
   const editTodo = (e, element) => {
     var newValue = prompt("Enter your task")
     store.dispatch(updateData(newValue, element))
@@ -12,8 +12,8 @@ function TodoTask() {
   };
 
   const deleteTodo = (element) => {
-    store.dispatch(deleteData(element))
-    // console.log(store.getState())
+    dispatch(deleteData(element))
+    console.log(store.getState())
   };
 
   return (
