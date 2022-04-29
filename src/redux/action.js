@@ -12,9 +12,9 @@ export function updateData(newValue, element) {
     newValue: newValue,
   };
 }
-export function deleteData(dataId) {
+export function deleteData(data) {
   return {
     type: "delete",
-    id: dataId,
+    id: data.id,
   };
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Index from "./Index";
+import TodoApp from "./TodoApp";
 
-function Todos() {
+function FetchApiData() {
   const [todoList, setTodoList] = useState([]);
   useEffect(() => {
     fetch("https://api.github.com/users?since=135")
@@ -16,9 +16,9 @@ function Todos() {
   return (
     <div>
       {/* {console.log(todoList)} */}
-      {<Index text={todoList} />}
+      {<TodoApp text={todoList} />}
     </div>
   );
 }
 
-export default Todos;
+export default FetchApiData;

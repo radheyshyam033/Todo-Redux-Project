@@ -3,14 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import {BrowserRouter} from 'react-router-dom'
+import { Provider } from 'react-redux';
+import store from './redux/store'
 // import reportWebVitals from './reportWebVitals';
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
    <BrowserRouter>
-      <App />,
-   </BrowserRouter>,
-   document.getElementById('root')
+      <App />
+   </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

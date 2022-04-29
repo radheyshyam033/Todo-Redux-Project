@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { deleteData, updateData } from "../redux/action";
 import store from "../redux/store";
 
@@ -7,10 +7,12 @@ function TodoTask() {
   const editTodo = (e, element) => {
     var newValue = prompt("Enter your task")
     store.dispatch(updateData(newValue, element))
+    console.log(store.getState())
   };
 
   const deleteTodo = (element) => {
     store.dispatch(deleteData(element))
+    console.log(store.getState())
   };
 
   return (
@@ -18,14 +20,14 @@ function TodoTask() {
       {/* {console.log(store.getState())} */}
       {store.getState() ? (
         <div>
-          {store.getState().map((element) => {
+          {store.getState().map((element,id) => {
             return (
               <div>
-                <div>{element.login}</div>
-                {element.login && element.id ? (
+                <div key={id}>{element.login}</div>
+                {(element.login && element.id) ? (
                   <div>
                     <button onClick={(e) => editTodo(e, element)}>Edit</button>
-                    <button onClick={(e) => deleteTodo(element)}>Delete</button>
+                    <button onClick={() => deleteTodo(element)}>Delete</button>
                   </div>
                 ) : null}
               </div>

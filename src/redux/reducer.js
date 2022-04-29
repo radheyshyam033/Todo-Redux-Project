@@ -1,5 +1,3 @@
-import { act } from "@testing-library/react";
-import store from "./store";
 
 const reducer = (state = [], action) => {
   // console.log(state)
@@ -14,15 +12,16 @@ const reducer = (state = [], action) => {
       ];
     case "update":
       return [
-        ...state,
-        state.map((ele) => {
+        ...state.map((ele) => {
           if (ele.id === action.id) {
             ele.login = action.newValue;
           }
+          return ele
         }),
       ];
     case "delete":
-      return state.filter((_,id) => id != action.id);
+      return state=[...state.filter((ele) => ele.id != action.id)];
+      
 
     default:
       return state;
