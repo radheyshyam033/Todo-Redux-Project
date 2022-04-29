@@ -1,7 +1,10 @@
-// import { createStore } from "redux";
-import { legacy_createStore as createStore } from "redux";
-import Insert from "./reducer";
+import { applyMiddleware, legacy_createStore as createStore } from "redux";
 
-const store = createStore(Insert);
+import reducer from './reducer'
+import thunk from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
 
+const middleWare=[thunk]
+const store = createStore(reducer,
+    composeWithDevTools(applyMiddleware(...middleWare)));
 export default store;

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import store from "../redux/store";
 import { insertData } from "../redux/action";
+import TodoHeader from "./TodoHeader";
 
-function Input() {
+function InputData() {
   var [task, setTask] = useState("");
 
   const handleChange = (e) => {
@@ -21,6 +22,7 @@ function Input() {
 
   return (
     <div>
+      <TodoHeader />
       <input
         type="text"
         onChange={handleChange}
@@ -31,4 +33,4 @@ function Input() {
     </div>
   );
 }
-export default Input;
+export default InputData;

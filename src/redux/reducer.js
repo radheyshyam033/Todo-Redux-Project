@@ -1,7 +1,16 @@
 
 const reducer = (state = [], action) => {
-  // console.log(state)
+  // console.log(action.type)
+  if(action.type!==''){
   switch (action.type) {
+    case "FETCH":
+      return [
+        ...state,
+        {
+          id: action.id,
+          login: action.login,
+        },
+      ];
     case "insert":
       return [
         ...state,
@@ -20,12 +29,11 @@ const reducer = (state = [], action) => {
         }),
       ];
     case "delete":
-      return state=[...state.filter((ele) => ele.id != action.id)];
-      
+      return state=[...state.filter((ele) => ele.id !== action.id)];
 
     default:
       return state;
   }
-  return state;
+}
 };
 export default reducer;
