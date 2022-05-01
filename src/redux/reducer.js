@@ -1,40 +1,31 @@
-
 const reducer = (state = [], action) => {
-  // console.log(action.type)
-  if(action.type!==''){
-  switch (action.type) {
-    case "FETCH":
-      return [
-        ...state,
-        {
-          id: action.id,
-          login: action.login,
-        },
-      ];
-    case "INSERT":
-      return [
-        ...state,
-        {
-          id: action.id,
-          login: action.login,
-        },
-      ];
-    case "UPDATE":
-      return [
-        ...state.map((ele) => {
-          if (ele.id === action.id) {
-            ele.login = action.newValue;
-          }
-          return ele
-        }),
-      ];
-    case "DELETE":
-      // console.log(state)
-      return [...state.filter((ele) => ele.id !== action.id)];
+  if (action.type !== "") {
+    switch (action.type) {
+      case "INSERT":
+        return [
+          ...state,
+          {
+            id: action.id,
+            login: action.login,
+          },
+        ];
+      case "UPDATE":
+        return [
+          ...state.map((ele) => {
+            if (ele.id === action.id) {
+              ele.login = action.newValue;
+            }
+            return ele;
+          }),
+        ];
+      case "DELETE":
+        var preData = [...state];
+        preData = preData.filter((ele) => ele.id !== action.id);
+        return preData;
 
-    default:
-      return state;
+      default:
+        return state;
+    }
   }
-}
 };
 export default reducer;

@@ -1,22 +1,25 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import TodoTask from "./TodoTask";
-import InputData from "./InputData";
-import TodoHeader from "./TodoHeader";
+import ShowProfile from "./ViewProfile";
+import Navbar from "./Navbar";
+import AddTask from "./AddTask";
+import ViewProfile from "./ViewProfile";
 
 function App() {
-  
   return (
     <div>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<TodoHeader />} />
-          <Route exact path="/inputdata" element={<InputData />} />
-          <Route exact path="/showdata" element={<TodoTask />} />
-       </Routes>
-       </BrowserRouter>
+        <div>
+          <Routes>
+            <Route path="/" element={<Navbar />} />
+            <Route exact path="/addtask" element={<AddTask />} />
+            <Route exact path="/showdata" element={<TodoTask />} />
+            <Route exact path="/viewprofile" element={<ViewProfile />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
     </div>
   );
-  
 }
 
 export default App;
