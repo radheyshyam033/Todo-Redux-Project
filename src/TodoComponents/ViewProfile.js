@@ -15,9 +15,11 @@ const ViewProfile = () => {
       </div>
       <div key={data.id}>
         Login : {data.login}<br/>
-        Node Id : {data.node_id}<br/>
-        <img src={data.avatar_url}></img>
-        <img src={data.url}></img>
+        {/* Node Id : {data.node_id}<br/> */}
+        <img src={data.avatar_url}></img><br/>
+        {/* <a href={data.url} /> */}
+        {/* <img src={data.followers_url}></img>
+        <img src={data.following_url}></img> */}
 
       </div>
       <button

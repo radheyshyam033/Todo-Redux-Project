@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import { insertData } from "../redux/action";
 import Navbar from "./Navbar";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import "./App.css";
 
 function AddTask() {
   var [task, setTask] = useState("");
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setTask(e.target.value);

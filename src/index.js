@@ -8,7 +8,7 @@ import { fetchApi } from "./redux/action";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 {
-  store.dispatch(fetchApi());
+store.dispatch(fetchApi());
 }
 root.render(
   <Provider store={store}>

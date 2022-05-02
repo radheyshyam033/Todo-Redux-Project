@@ -1,19 +1,12 @@
-import { useState } from "react";
 
 const reducer = (state = [], action) => {
   let actionData=action.payLoad
 
-  // console.log(actionData)
   if (action.type !== "") {
-    // console.log(action)
     switch (action.type) {
       case "INSERT":
         return [
-          ...state,
-          actionData
-            // id: action.id,
-            // login: action.login,
-          
+          ...state,actionData
         ];
       case "UPDATE":
         return [
