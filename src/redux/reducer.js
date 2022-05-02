@@ -1,13 +1,19 @@
+import { useState } from "react";
+
 const reducer = (state = [], action) => {
+  let actionData=action.payLoad
+
+  // console.log(actionData)
   if (action.type !== "") {
+    // console.log(action)
     switch (action.type) {
       case "INSERT":
         return [
           ...state,
-          {
-            id: action.id,
-            login: action.login,
-          },
+          actionData
+            // id: action.id,
+            // login: action.login,
+          
         ];
       case "UPDATE":
         return [
@@ -19,6 +25,7 @@ const reducer = (state = [], action) => {
           }),
         ];
       case "DELETE":
+        console.log(state)
         var preData = [...state];
         preData = preData.filter((ele) => ele.id !== action.id);
         return preData;

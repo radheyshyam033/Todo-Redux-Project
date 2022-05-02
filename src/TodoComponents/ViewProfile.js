@@ -9,13 +9,17 @@ const ViewProfile = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="body">
+    <div className="input">
       <div>
         <h2>User Profile</h2>
       </div>
-      <div>Id : {data.id}</div>
-      <div>Login : {data.login}</div>
-      <br />
+      <div key={data.id}>
+        Login : {data.login}<br/>
+        Node Id : {data.node_id}<br/>
+        <img src={data.avatar_url}></img>
+        <img src={data.url}></img>
+
+      </div>
       <button
         onClick={() => {
           navigate("/showdata");
